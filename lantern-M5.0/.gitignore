@@ -1,0 +1,5 @@
+/target/
+.m5-cache/
+.m5-cargo-home/
+.m5-toolchains/
+*.profraw

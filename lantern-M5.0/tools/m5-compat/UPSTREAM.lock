@@ -1,0 +1,30 @@
+format_version = 1
+platform = "linux-amd64"
+
+[cometbft]
+tag = "v0.38.23"
+commit = "feb2aea4dc271d612129afc958cb844713ec792b"
+git_archive_sha256 = "a5e53329b0abcd02b4ccdcadc2bc1c232af26922f1f2aff143245ad50a39e048"
+binary_sha256 = "6027531d6420abcfbff11a3e5b4071ac0bde139f35bb021241153ab943026ecc"
+abci_cli_sha256 = "8fbe463ba125624c3a9f4330f0305df7209074d96b3eb8ae9f6d1081b7faf3bb"
+reported_core_version = "0.38.22+feb2aea"
+abci_version = "2.0.0"
+block_protocol = 11
+p2p_protocol = 8
+
+[reference_fixture]
+path = "tools/m5-compat/test-vectors/cometbft-v0.38.23.json"
+sha256 = "d3ff1cc6142c3b4f922d3bfde5fd01f94b1ba883613921e428b6e38425b9c0e8"
+
+[toolchains]
+go = "1.22.11"
+go_linux_amd64_tar_sha256 = "0fc88d966d33896384fbde56e9a8d80a305dc17a9f48f1832e061724b1719991"
+rust = "1.97.1"
+rustc_commit = "8bab26f4f"
+
+[rust_crates]
+tendermint = "0.40.4"
+tendermint_proto = "0.40.4"
+tendermint_rpc = "0.40.4"
+tendermint_abci = "0.40.4"
+prost = "0.13.5"

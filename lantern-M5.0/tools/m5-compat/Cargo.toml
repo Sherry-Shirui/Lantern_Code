@@ -1,0 +1,37 @@
+[package]
+name = "lantern-comet-compat"
+description = "M5.0-only CometBFT v0.38.23 and tendermint-rs 0.40.4 compatibility gate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[features]
+default = []
+abci-probe = ["dep:sha2", "dep:tendermint-abci"]
+
+[dependencies]
+anyhow.workspace = true
+hex.workspace = true
+prost.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2 = { workspace = true, optional = true }
+tendermint.workspace = true
+tendermint-abci = { workspace = true, optional = true }
+tendermint-proto.workspace = true
+tendermint-rpc.workspace = true
+thiserror.workspace = true
+
+[[bin]]
+name = "m5-compat-probe"
+path = "src/bin/compat_probe.rs"
+
+[[bin]]
+name = "m5-abci-probe-server"
+path = "src/bin/abci_probe_server.rs"
+required-features = ["abci-probe"]
+
+[lints]
+workspace = true
