@@ -1,0 +1,27 @@
+[package]
+name = "lantern-latest-map"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[features]
+default = ["storage"]
+storage = ["dep:anyhow", "dep:lantern-store"]
+
+[dependencies]
+anyhow = { workspace = true, optional = true }
+borsh.workspace = true
+jmt.workspace = true
+lantern-store = { workspace = true, optional = true }
+lantern-types.workspace = true
+sha2-jmt.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+jmt = { workspace = true, features = ["mocks"] }
+proptest.workspace = true
+
+[lints]
+workspace = true

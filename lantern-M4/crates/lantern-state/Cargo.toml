@@ -1,0 +1,21 @@
+[package]
+name = "lantern-state"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+lantern-history = { workspace = true, features = ["storage"] }
+lantern-latest-map = { workspace = true, features = ["storage"] }
+lantern-store.workspace = true
+lantern-types.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+ed25519-dalek.workspace = true
+proptest.workspace = true
+
+[lints]
+workspace = true
