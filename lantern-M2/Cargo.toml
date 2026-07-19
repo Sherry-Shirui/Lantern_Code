@@ -1,0 +1,41 @@
+[workspace]
+members = [
+    "crates/lantern-latest-map",
+    "crates/lantern-store",
+    "crates/lantern-types",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97.1"
+license = "Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+anyhow = "=1.0.103"
+borsh = { version = "=1.8.0", features = ["derive", "de_strict_order"] }
+ed25519-dalek = { version = "=3.0.0", default-features = true }
+hex = "=0.4.3"
+jmt = { version = "=0.12.0", default-features = false, features = ["sha2", "std"] }
+lantern-latest-map = { path = "crates/lantern-latest-map", default-features = false }
+lantern-store = { path = "crates/lantern-store" }
+lantern-types = { path = "crates/lantern-types" }
+minicbor = { version = "=2.2.2", features = ["std"] }
+proptest = { version = "=1.11.0", default-features = false, features = ["std"] }
+rocksdb = { version = "=0.24.0", default-features = false }
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.150"
+sha2 = "=0.11.0"
+sha2-jmt = { package = "sha2", version = "=0.10.9" }
+thiserror = "=2.0.18"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+panic = "deny"
+unwrap_used = "deny"
