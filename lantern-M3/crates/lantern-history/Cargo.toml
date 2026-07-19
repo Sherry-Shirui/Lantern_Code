@@ -1,0 +1,22 @@
+[package]
+name = "lantern-history"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[features]
+default = ["storage"]
+storage = ["dep:lantern-store"]
+
+[dependencies]
+lantern-store = { workspace = true, optional = true }
+lantern-types.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true
